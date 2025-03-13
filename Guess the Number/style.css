@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #A3D1C6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: #FBFFE4;
+    border-radius: 12px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #A3D1C6;
+    font-size: 40px;
+    margin-bottom: 15px;
+   
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+#guessinput {
+    padding: 10px;
+    width: 220px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #8a7d6e;
+    background: #f8f4e1;
+    color: #3D8D7A;
+    outline: none;
+}
+
+#guessinput:focus {
+    border-color: #5a4d3c;
+    background-color: #fff;
+}
+
+#check {
+    padding: 12px 25px;
+    background-color: #3D8D7A;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#check:hover {
+    background-color: #453a2a;
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.response-box {
+    padding: 15px;
+    margin-top: 30px;
+    width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    display: none;
+    text-align: center;
+    background-color: #B3D8A8;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.response-box img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.response-box img:hover {
+    transform: scale(1.1);
+}
+
+h6 {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

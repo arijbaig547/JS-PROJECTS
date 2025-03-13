@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="toggle">
+            <button id="toggle"><i class="fa-solid fa-moon"></i></button>
+        </div>
+   
+            <div class="box">
+                <div class="text">
+                    <h1>Sign-Up Form</h1>
+                </div>
+                 
+                
+                <input id="email-inp" type="email"placeholder="Email"><br>
+                <label id="email-lab" for="">Email Must include @</label>
+                <i class="fa-solid fa-envelope" id="envelope"></i>
+                
+                <input id="pass-inp" type="password" placeholder="Password">
+                <label id="pass-lab" for="">Must include Special character & number</label>
+                <i class="fa-solid fa-lock" id="lock"></i>
+                <i class="fa-solid fa-eye" id="eye"></i>
+                <a href="#">Already have an Account?<span style="color: orange; font-weight: 700;"> Log In</span></a>
+                 <div class="button">
+                    <button id="btn">Sign Up</button>
+                 </div>
+            </div>
+       
+      
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

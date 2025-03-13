@@ -1,0 +1,190 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url("images/forest.webp") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.box{
+    min-width: 33%;
+    min-height: 53vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;    
+    padding: 0 30px;
+    position: relative;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 4px solid #E8F9FF;
+    backdrop-filter: blur(2px);
+}
+.box input{
+    border-radius: 5px;
+    padding: 4px;
+    width: 80%;
+    color: white;
+    border-bottom: 3px solid #fff;
+    background-color: transparent;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    margin-top: 40px;
+}
+#toggle{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    margin: 10px 10px;   
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+    color: orange;
+}
+#toggle:hover{
+    color: orange;
+}
+.box ::placeholder{
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+}
+.text{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top:1%;
+    left: 1%;
+    color: white;
+    font-family: sans-serif;
+    padding: 19px;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+}
+#btn{
+text-align: center;
+padding: 10px 60px;
+background-color: transparent;
+border-radius: 15px;
+border: 2px solid #E8F9FF;
+font-size: 15px;
+color: white;
+cursor: pointer;   
+transition: 1s ease ;
+}
+#btn:hover{
+    background-color: white;
+    color: black;
+    
+}
+#email-inp{
+    position: relative;
+}
+.iconactive{
+    color: orange !important;
+}
+.fa-envelope {
+    position: absolute;
+    left: 80%;
+    top: 33%;
+    transform: translateY(-50%);
+    color: #E8F9FF;
+    font-size: 16px; /* Icon ka size adjust karna */
+    transition: 1s;
+}
+.fa-lock{
+    position: absolute;
+    left: 80%;
+    top: 52%;
+    color: #E8F9FF;
+    transition: 1s;
+}
+.fa-eye{
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    cursor: pointer;
+    transition: 1s;
+}
+a{
+    color: white;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.none{
+    display: none;
+}
+label{
+    color: white;
+    font-size: 12px;
+}
+.redlabel{
+    color: red;
+  
+    font-weight: 900;
+}
+.greenlabel{
+    color: rgb(22, 201, 22);
+   
+    font-weight: 900;
+}
+.dark{
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url("images/day.webp") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.dark #toggle{
+    color: orange;
+}
+@media screen and (min-width:560px) and (max-width:768px) {
+    .box{
+        min-width: 50%;
+    }
+}
+@media screen and (max-width:375px) {
+    .text{
+        font-size: 10px;
+    }
+    .box{
+        min-width: 80%;
+    }
+    .fa-envelope{
+     top: 32%;
+    }
+    .box ::placeholder{
+        font-size: 12px;
+    }
+    a{
+        font-size: 11px;
+    }
+    #btn{
+        padding: 10px 30px;
+        font-size: 11px;
+    }
+}

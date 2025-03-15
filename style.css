@@ -1,0 +1,122 @@
+html,body{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+h1{
+    font-size: 6vw;
+    text-align: center;
+    margin-top: 40px;
+    color: rgb(197, 151, 83);;
+    font-family: 'Courier New', Courier, monospace;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;;
+}
+.container{
+    width: 100%;
+    background-color: #432a04;
+    margin: auto;
+    padding: 5px;
+    font-size: 90px;
+    min-height: 100vh;
+    transition: 1s 
+
+}
+.time {
+    display: flex;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 6px solid rgb(146, 101, 32);
+    align-items: center;
+    justify-content: center;
+    color: rgb(236, 210, 172);
+    font-size: 50px;
+    background-color: transparent;
+    margin: 50px auto;
+    position: relative;
+}
+
+.dot-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: circularMotion 2s linear infinite paused; /* Start paused */
+}
+
+.dot {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(255, 196, 0);
+    transform: translate(-50%, -50%);
+}
+
+#stopbtn{
+    display: none;
+}
+
+/* Circular motion */
+@keyframes circularMotion {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.start{
+    animation: circularMotion 2s linear infinite; /* Start paused */
+    
+}
+.reset{
+    transform: rotate(0deg);
+}
+.buttons{
+
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.buttons button{
+    padding: 10px 90px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(189, 148, 12);;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+button:hover{
+    background-color: rgb(219, 191, 99);;
+}
+#resetbtn{
+    display: none;
+}
+/* blue theme */
+
+.blue .container{
+    background-color: #2C303D;
+    transition: 1s;
+}
+.blue .time{
+    color: white;;
+    border: 6px solid #474a57;;
+}
+.blue .dot{
+    background-color: rgb(66, 66, 207);
+}
+.blue button{
+    background-color: grey;
+}
+.blue button:hover{
+    background-color: rgb(71, 68, 68);
+}

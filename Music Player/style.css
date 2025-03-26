@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #B5A8D5;
+    padding: 20px;
+}
+.music-box{
+    padding: 20px;
+    margin: 20px;
+    width: 40%;
+    min-width: 300px;
+    border-radius: 15px;
+    height: 50%;
+    background-color: #4D55CC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.file{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    color: white;
+    background:black;
+}
+
+.circle{
+    border: 5px solid #211C84;
+    border-radius: 50%;
+    min-width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 5s linear infinite;
+    animation-play-state: paused;
+  
+}
+.circle>img{
+    width: 100px;
+    text-align: center;
+
+    display: inline-block;
+}
+.custom-player {
+
+    padding: 15px;
+    border-radius: 12px;
+    display: inline-block;
+    text-align: center;
+}
+
+audio {
+
+    filter: invert(1) brightness(0.8); /* Dark Mode Effect */
+}
+
+button {
+    margin-top: 10px;
+    background: rgb(181, 28, 189);
+    border: none;
+    color: white;
+    font-size: 17px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

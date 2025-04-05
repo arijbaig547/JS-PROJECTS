@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 1s;
+}
+#dark{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 20px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 25px;
+  background:linear-gradient(to left,rgb(122, 108, 245),rgb(101, 85, 245),rgb(58, 39, 230));
+  color: white;
+  cursor: pointer;
+}
+#dark:hover{
+  color: yellow;
+  transition: 0.5s;
+}
+.todo-container{
+    width: 90%;  /* Full width for smaller screens */
+    max-width: 400px;  /* But not more than 400px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;   
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+.activities{
+    width: 100%;
+    max-width: 400px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  padding: 15px;
+  text-transform: uppercase;
+  background:linear-gradient(to left,rgb(122, 108, 245),rgb(101, 85, 245),rgb(58, 39, 230));
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.input-container {
+    position: relative;  /* Parent relative hona zaroori hai */
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    margin-top: 20px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px 35px 10px 10px; /* Right padding badhaya tak icon overlap na kare */
+    border-radius: 25px;
+    border: 1px solid rgb(230, 230, 230);
+}
+input::placeholder{
+    font-size: 15px;
+}
+.input-container .fa-magnifying-glass {
+    position: absolute;
+    right: 10px; /* Input ke andar right side par */
+    top: 50%;
+    transform: translateY(-50%); /* Center align */
+    color: rgb(58, 39, 230);
+    cursor: pointer;
+}
+
+#addbtn{
+    padding: 10px 40px;
+    margin-top: 1.1rem;
+    border-radius: 30px;
+    border: 2px dashed rgb(101, 85, 245);
+    background: transparent;
+    color: rgb(58, 39, 230);
+    width: 100%;
+    max-width: 200px;
+}
+#addbtn:hover{
+  border:2px dashed rgb(0, 0, 0);
+  cursor: pointer;
+  transition: 1s;
+ 
+}
+#dltbtn:hover{
+  border:2px dashed rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+#ul{
+    margin-top: 1rem;
+    list-style-type: none;
+    width: 100%;
+    font-size: 15px;
+    margin: 10px;
+    height: 150px; /* Fixed height for scroll */
+    overflow-y: auto; /* Enables vertical scroll when content exceeds height */
+}
+#ul li {
+    padding: 10px;
+    background: linear-gradient(to left, rgb(122, 108, 245), rgb(101, 85, 245), rgb(58, 39, 230));
+    width: 90%;
+    margin: 10px auto; /* Center align */
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    display: flex;  /* Flexbox apply */
+    align-items: center;  /* Vertical center */
+    justify-content: space-between;  /* Text left, buttons right */
+}
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #8B06FF #DFE9EB;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #DFE9EB;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    background-color: #B8C0C2;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    background-color: #B8C0C2;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #8B06FF;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #000000;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #8B06FF;
+  }
+  
+.btn-group {
+    display: flex;
+    gap: 10px;  /* Space between buttons */
+}
+
+#ul li button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.edit {
+    background-color: green !important;
+    color: white;
+}
+
+.delete {
+    background-color: red !important;
+    color: white;
+}
+.display{
+
+ text-align: center;
+ margin-top: 2rem;
+ font-size: 20px;
+}
+
+.buttons{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+#dltbtn{
+    padding: 10px 10px;
+    margin-top: 1.1rem;
+    border-radius: 30px;
+    border: 2px dashed rgb(228, 15, 7);
+    background: transparent;
+    color: red;
+    width: 20%;
+    min-width: 100px;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#ul li.animate {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.container.dark {
+  background-color: #070F2B;
+  color: white;
+  
+}
+
+.container.dark .todo-container {
+  background-color: #1B1A55;  /* Darker background for the todo container */
+  
+}
+
+.container.dark .activities {
+  background: linear-gradient(to left, rgb(58, 39, 230), rgb(101, 85, 245), rgb(122, 108, 245));
+}
+
+.container.dark input {
+  background-color: #070F2B; /* Dark background for inputs */
+  color: white;
+  border: 1px solid #ffffff; /* Dark border */
+}
+.container.dark input::placeholder {
+
+  color: white;
+ 
+}
+
+.container.dark #ul li {
+  background: linear-gradient(to left, rgb(58, 39, 230), rgb(101, 85, 245), rgb(122, 108, 245));
+}
+
+.container.dark #addbtn {
+  background-color: rgb(101, 85, 245);
+  color: white;
+}
+
+.container.dark #dltbtn {
+  background-color: rgb(228, 15, 7);
+  color: white;
+}

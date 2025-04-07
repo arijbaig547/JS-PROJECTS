@@ -33,28 +33,29 @@ function addItem() {
 
 
 function searchItem() {
-    const searchValue = searchInput.value.toLowerCase();
-    const listItems = ul.querySelectorAll("li"); 
-
-    listItems.forEach((item) => {
-        const itemText = item.querySelector("span").textContent.toLowerCase();
-
-        if (itemText.includes(searchValue)) {
-            item.style.display = "flex";  
-        } else {
-            item.style.display = "none";  
+    var itemli = document.querySelectorAll("li");
+    const search = searchInput.value.toLowerCase()
+    itemli.forEach((item) => {
+        const itemText = item.textContent.toLowerCase();
+        if (itemText.includes(search)) {
+            item.style.display = "flex"
         }
-    });
+        else {
+            item.style.display = "none"
+        }
+
+    })
+
 }
 
 searchInput.addEventListener("input", searchItem);
 
 function edit(e) {
-    
+
     var span = e.parentNode.parentNode.querySelector("span");
-    var pro = prompt("Enter updated value", span.textContent); 
+    var pro = prompt("Enter updated value", span.textContent);
     if (pro) {
-        span.textContent = pro; 
+        span.textContent = pro;
     }
 }
 
@@ -64,10 +65,10 @@ function deleteItem(e) {
 }
 
 function removeAllItem() {
-  
+
     if (ul.children.length > 0) { // Check if list is not empty
         ul.innerHTML = "";
-        
+
     } else {
         alert("List already empty");
     }

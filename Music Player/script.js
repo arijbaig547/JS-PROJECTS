@@ -1,31 +1,42 @@
 const audioPlayer = document.getElementById("audioPlayer");
 const playPauseBtn = document.getElementById("playPauseBtn");
-var circle = document.querySelector(".circle");
-var songList=document.querySelectorAll(".musics audio")
-var musicbox=document.querySelector(".music-box")
-var currentSongIndex=0;
+const circle = document.querySelector(".circle");
+const songList = document.querySelectorAll(".musics audio");
+let currentSongIndex = 0;
 
+// Load and play song
+function loadSong(index) {
+    const selectedSong = songList[index];
+    if (selectedSong) {
+        audioPlayer.src = selectedSong.src;
+        audioPlayer.play();
+        playPauseBtn.textContent = "⏸ Pause";
+        circle.style.animationPlayState = "running";
+    }
+}
+
+// Play/pause toggle
 playPauseBtn.addEventListener("click", () => {
     if (audioPlayer.paused || audioPlayer.currentTime === 0) {
-
         if (!audioPlayer.src) {
-            var songName=document.createElement("p")
-            songName.textContent=audioPlayer.src.textContent;
-            audioPlayer.src ="Bewafa Tera Masoom Chehra LYRICAL Rochak Kohli Feat Jubin Nautiyal Rashmi V  Karan Mehra Ihana.mp3"; // Make sure a valid src is assigned
+            loadSong(currentSongIndex);
+        } else {
+            audioPlayer.play();
+            circle.style.animationPlayState = "running";
+            playPauseBtn.textContent = "⏸ Pause";
         }
-        audioPlayer.play();
-        circle.style.animationPlayState = "running"; // Animation start karo
-        playPauseBtn.textContent = "⏸ Pause";
     } else {
-        // Audio ko pause karna hai
         audioPlayer.pause();
-        circle.style.animationPlayState = "paused"; // Animation pause karo
+        circle.style.animationPlayState = "paused";
         playPauseBtn.textContent = "▶ Play";
     }
 });
 
-function playSong(index){
-    if(index>=0 || index<songList.length){
-        audioPlayer.src=songList[index].src
+// Go to next song
+function nextSong() {
+    currentSongIndex++;
+    if (currentSongIndex >= songList.length) {
+        currentSongIndex = 0; // Loop to the beginning
     }
+    loadSong(currentSongIndex);
 }

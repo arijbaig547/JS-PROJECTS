@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url("https://i.pinimg.com/1200x/08/23/0d/08230db195cb6b7bccf47136f3d9410a.jpg") center/cover no-repeat; /* Background Image */
+    overflow: hidden;
+    cursor: url("cursor.cur"),auto;
+}
+
+.torch-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle 100px at 50% 50%, rgba(255,255,255,0.8), rgba(0,0,0,0.9));
+    pointer-events: none; /* Mouse interactions disable */
+}

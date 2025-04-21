@@ -1,0 +1,143 @@
+body {
+  background: linear-gradient(to right, #4C3C8C, #5E4D6E);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+  
+.start-screen {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  padding: 60px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: clamp(24px, 5vw, 37px);
+  text-align: center;
+}
+
+.start-screen h1, .start-screen h5 {
+  padding: 10px;
+}
+
+#question {
+  width: 100%;
+  background-color: rgb(63, 63, 63);
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  padding: 10px;
+}
+
+.quiz-container {
+  max-width: 1000px;
+  width: 90%;
+  height: auto;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 15px;
+  gap: 20px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  font-size: clamp(14px, 2vw, 18px);
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+#quizForm {
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+#nextBtn {
+  background-color: #00c6ff;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.texts {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.score, .timer {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+#startbtn {
+  padding: 10px 20px;
+  border: none;
+  background-color: rgb(20, 177, 20);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.display .start-screen {
+  display: none;
+}
+
+.display .quiz-container {
+  display: flex;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .quiz-container {
+      flex-direction: column;
+      padding: 20px;
+  }
+
+  .texts {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .start-screen {
+      padding: 20px;
+  }
+
+  .quiz-container h1 {
+      font-size: 24px;
+  }
+
+  .quiz-container h4 {
+      font-size: 16px;
+  }
+
+  .quiz-container h5,
+  .quiz-container label {
+      font-size: 13px;
+  }
+}

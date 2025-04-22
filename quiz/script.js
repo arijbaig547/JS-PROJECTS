@@ -67,22 +67,22 @@ var opt3 = document.querySelector("#opt3");
 var options = document.querySelectorAll('input[name="option"]');
 var scoreDisplay = document.getElementById("score");
 var time = document.getElementById("timer");
-var startbtn=document.getElementById("startbtn")
+var startbtn = document.getElementById("startbtn")
 
 var index = 0;
 var score = 0;
 var jstime = 10;
 var interval;
 
-startbtn.addEventListener("click",function(){
-  var container=document.querySelector(".container")
+function startQuiz() {
+  var container = document.querySelector(".container")
   container.classList.add("display");
   loadQuestion();
-})
+}
 
 
 function startTimer() {
-  clearInterval(interval); // reset interval if already running
+  clearInterval(interval); 
   jstime = 15;
   time.textContent = jstime;
 
@@ -92,39 +92,53 @@ function startTimer() {
 
     if (jstime <= 0) {
       clearInterval(interval);
-      autoMoveNext(); // move to next even if not selected
+      autoMoveNext(); 
     }
   }, 1000);
 }
 
 function loadQuestion() {
-  clearInterval(interval); // reset interval if already running
+  clearInterval(interval); 
+
   if (index >= questions.length) {
     clearInterval(interval);
-    Swal.fire({
-      title: "Quiz Finished!",
-      text: "Your Score is: " + score,
-      icon: "success",
-      confirmButtonText: "Restart"
 
-    }).then(() => {
-      location.reload();
-    });
+    if (score >= 40) {
+      Swal.fire({
+        title: "Congratulations You Passed The Test",
+        text: "Your Score is: " + score,
+        icon: "success",
+        confirmButtonText: "Restart"
+      }).then(() => {
+        location.reload();
+      });
+    } else {
+      Swal.fire({
+        title: "Alas ! You Failed The Test",
+        text: "Your Score is: " + score,
+        icon: "error",
+        confirmButtonText: "Restart"
+      }).then(() => {
+        location.reload();
+      });
+    }
+
     return;
   }
-  
+
 
   ques.textContent = questions[index].question;
   opt1.textContent = questions[index].option1;
   opt2.textContent = questions[index].option2;
   opt3.textContent = questions[index].option3;
 
-  // Reset options
+  
   options.forEach(opt => opt.checked = false);
 
-  // Start interval
+ 
   startTimer();
 }
+
 
 function checkAnswer() {
   var selectedOption = document.querySelector('input[name="option"]:checked');
@@ -164,4 +178,3 @@ function autoMoveNext() {
 
 
 
-  

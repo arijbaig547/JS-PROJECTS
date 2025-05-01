@@ -5,6 +5,8 @@ body {
   align-items: center;
   width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin: 0;
 }
 
@@ -56,6 +58,7 @@ h1 {
   font-size: clamp(14px, 2vw, 18px);
   margin: 20px;
   box-sizing: border-box;
+  animation: animate 1s ease-in-out;
 }
 
 #quizForm {
@@ -138,6 +141,25 @@ h1 {
 
   .quiz-container h5,
   .quiz-container label {
-      font-size: 13px;
+      font-size: 12px;
+      text-wrap: ;
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  25%{
+    opacity: 0.3;
+  }
+  50%{
+    opacity: 0.6;
+  }
+  75%{
+  opacity: 0.8;
+  }
+  100% {
+  opacity: 1;
   }
 }

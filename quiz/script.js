@@ -106,18 +106,21 @@ function loadQuestion() {
     if (score >= 40) {
       Swal.fire({
         title: "Congratulations You Passed The Test",
-        text: "Your Score is: " + score,
+        text: `Your Score is ${((score * 100) / 80).toFixed(0)}%`,
         icon: "success",
-        confirmButtonText: "Restart"
+        confirmButtonText: "Restart",
+        background: "#cceeff", // Light purple
+       
       }).then(() => {
         location.reload();
       });
     } else {
       Swal.fire({
         title: "Alas ! You Failed The Test",
-        text: "Your Score is: " + score,
+        text: `Your Score is ${((score * 100) / 80).toFixed(0)}%`,
         icon: "error",
-        confirmButtonText: "Restart"
+        confirmButtonText: "Restart",
+        background: "#cceeff", // Light purple,
       }).then(() => {
         location.reload();
       });

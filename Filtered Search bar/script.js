@@ -51,7 +51,7 @@ function searchItem() {
         }
     });
 
-    if (!itemFound) {
+    if (!itemFound) {   
         message.style.display = "block";
         message.innerHTML="ITEM NOT FOUND"
     } else {

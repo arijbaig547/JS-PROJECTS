@@ -1,0 +1,134 @@
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    background-color: 	#1B1F3B;
+}
+.bookmark-container {
+    background-color: #2C3E50;
+    width: 90%; /* Use percentage */
+    max-width: 600px; /* Limit it */
+    min-height: 400px;
+    padding: 15px;
+    border-radius: 20px;
+}
+.logo-div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.logo-div h5 {
+    font-size: clamp(18px,2vw,29px);
+    text-transform: uppercase;
+    color: white;
+    font-weight: 800;
+}
+#logo {
+    width: 100px; /* Responsive logo */
+    max-width: 150px;
+    height: auto;
+}
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* center content */
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap; /* allow wrapping in mobile */
+    padding: 2px;
+    margin-bottom: 20px;
+}
+h4 span{
+    font-weight: 200;
+}
+
+#search {
+    flex: 1 1 250px; /* flex-grow: 1, shrink: 1, basis: 250px */
+    max-width: 300px;
+    padding: 10px 0 10px 10px;
+    border-radius: 25px;
+    background-color: #D9D9D9;
+    border: none;
+    margin: 10px 5px 3px 6px;
+}
+
+.submit-section {
+    background-color: orange;
+    flex: 1 1 250px; /* also make submit section responsive */
+    max-width: 250px;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.submit-section input {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 25px;
+    background-color: #D9D9D9;
+    border: none;
+    padding: 4px 0 4px 10px;
+}
+.submit-section button{
+    margin-top: 10px;
+    text-align: center;
+    background-color: rgb(28, 29, 29);
+    color: white;
+    border: none;
+    font-weight: 900;
+    padding: 5px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.cards{
+    margin: 10px 5px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    max-height: 200px;
+    overflow: auto;
+    word-wrap: break-word;
+   
+}
+.card {
+    width: 180px;
+    max-width: 170px;
+    min-height: 150px;
+    background-color: #426B93;
+    text-align: center;
+    padding: 15px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 800;
+    animation: animation 0.8s linear; /* Fixed here */
+}
+
+.card button {
+    background-color: red;
+    color: white;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 7px;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes animation {
+    0% {
+        opacity: 0; /* Fixed missing px */
+    }
+    100% {
+        opacity: 1;
+    }
+}
